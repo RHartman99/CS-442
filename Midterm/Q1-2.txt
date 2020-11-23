@@ -1,0 +1,28 @@
+Question 1: For this ER diagram, what is the key of the Enrolled table?
+
+Ans:        (sID, cID)
+
+Question 2: Write down the key of the table that corresponds to the aggregate
+            relationship E. If there are any conflicting attribute names, rename
+            them something appropriate and easy to understand.
+            
+Ans:        (A_F, H, D_F, J). Since A and D have duplicate attribute names, I had
+            to rename them to <ENTITY SET NAME>_<ATTRIBUTE NAME>
+
+
+1: (sID, cID)
+2: (F_A, H, J, F_D
+
+CREATE TABLE Statement (
+     date DATE,
+     sid INTEGER,
+     acctNum INTEGER,
+     PRIMARY KEY (sid, acctNum),
+     FOREIGN KEY (acctNum) REFERENCES Account);
+
+CREATE TABLE Own (
+    ssn CHAR(11),
+    acctNum INTEGER,
+    PRIMARY KEY (acctNum),
+    FOREIGN KEY (ssn) REFERENCES Customer,
+    FOREIGN KEY (acctNum) REFERENCES Account);
